@@ -116,4 +116,5 @@ micro: all
 cub: OPT_DEFS += -DKEYMAP_CUB
 cub: all
 
-
+phitsc: OPT_DEFS += -DKEYMAP_PHITSC
+phitsc: all
