@@ -23,7 +23,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         GRV , 1,   2,   3,   4,   5,  FN3,
         TAB , Q,   W,   E,   R,   T,  FN2,
-        FN15, A,   S,   D,   F,   G,
+        FN1,  A,   S,   D,   F,   G,
         LSFT, Z,   X,   C,   V,   B,  FN1,
         LGUI, NUBS,EQL, RBRC,FN21,
                                       HOME,END,
@@ -42,7 +42,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // Layer1:
         // left hand
-        FN16,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        FN23,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -51,7 +51,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            TRNS,
                                  SPC,TRNS,LALT,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,FN15,FN16,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                   FN9, FN7, FN8, FN10,TRNS,NUHS,
              TRNS,FN11,FN13,FN14,FN12,TRNS,TRNS,
@@ -270,9 +270,9 @@ enum function_id {
 static const uint16_t PROGMEM fn_actions[] = {
     ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key
 
-    ACTION_LAYER_TAP_TOGGLE(1),                     // FN1 - Layer 1
-    ACTION_LAYER_TAP_TOGGLE(2),                     // FN2 - Layer 2
-    ACTION_LAYER_TAP_TOGGLE(3),                     // FN3 - Layer 3
+    ACTION_LAYER_MOMENTARY(1),                      // FN1 - Layer 1
+    ACTION_LAYER_MOMENTARY(2),                      // FN2 - Layer 2
+    ACTION_LAYER_MOMENTARY(3),                      // FN3 - Layer 3
 
     ACTION_MODS_TAP_KEY(MOD_LALT, KC_ESC),          // FN4
     ACTION_MODS_TAP_KEY(MOD_RALT, KC_ESC),          // FN5
@@ -286,9 +286,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RALT, KC_RBRACKET),         // FN12 = ]
     ACTION_KEY     (KC_NONUS_BSLASH),               // FN13 = <
     ACTION_MODS_KEY(MOD_LSFT, KC_NONUS_BSLASH),     // FN14 = >
-
-    ACTION_LAYER_MOMENTARY(1),                      // FN15 - Layer 1
-    ACTION_MODS_KEY(MOD_LCTL, KC_GRAVE),            // FN16 = Ctrl + §
+    ACTION_MODS_KEY(MOD_LSFT, KC_7),                // FN15  = /
+    ACTION_MODS_KEY(MOD_RALT, KC_NONUS_BSLASH),     // FN16  = \
 
     ACTION_MODS_KEY(MOD_LSFT, KC_F5),               // FN17
     ACTION_MODS_KEY(MOD_LSFT, KC_F9),               // FN18
@@ -298,6 +297,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),          // FN21
     ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ESC),          // FN22
 
+    ACTION_MODS_KEY(MOD_LCTL, KC_GRAVE),            // FN23 = Ctrl + §
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
