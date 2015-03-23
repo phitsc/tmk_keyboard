@@ -25,7 +25,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB , Q,   W,   E,   R,   T,  FN2,
         FN15, A,   S,   D,   F,   G,
         LSFT, Z,   X,   C,   V,   B,  FN1,
-        LGUI, NUBS,EQL, RBRC,LCTL,
+        LGUI, NUBS,EQL, RBRC,FN21,
                                       HOME,END,
                                            LCTL,
                                  BSPC, DEL,FN4,
@@ -34,7 +34,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              FN2,  Y,   U,   I,   O,   P,   LBRC,
                    H,   J,   K,   L,   SCLN,QUOT,
              FN1,  N,   M,   COMM,DOT, SLSH,RSFT,
-                       RCTL, LEFT,DOWN,UP,  RIGHT,
+                       FN22, LEFT,DOWN,UP,  RIGHT,
         PGDN, PGUP,
         RCTL,
         FN5,  ENT, SPC
@@ -49,7 +49,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
-                                 TRNS,TRNS,TRNS,
+                                 SPC,TRNS,LALT,
         // right hand
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -73,7 +73,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  TRNS,TRNS,TRNS,
         // right hand
              TRNS,F6,  F7,  F8,  F9,  F10, BRK,
-             TRNS,F11, F12, TRNS,TRNS,TRNS,TRNS,
+             TRNS,F11, F12, TRNS,TRNS,TRNS,PSCR,
                   TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                        TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -93,7 +93,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            TRNS,
                                  TRNS,TRNS,TRNS,
         // right hand
-             TRNS,MUTE,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,MUTE,TRNS,TRNS,TRNS,TRNS,PWR,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                   TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -295,8 +295,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_LSFT, KC_F10),              // FN19
     ACTION_MODS_KEY(MOD_LSFT, KC_F11),              // FN20
 
-    ACTION_MODS_TAP_KEY(MOD_LCTL, KC_BSPACE),       // FN21
-    ACTION_MODS_TAP_KEY(MOD_RCTL, KC_SPACE),        // FN22
+    ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),          // FN21
+    ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ESC),          // FN22
 
 };
 
