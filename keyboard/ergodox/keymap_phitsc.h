@@ -97,7 +97,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                   TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       MPRV,VOLD,VOLU,MNXT,TRNS,
+                       TRNS,MPRV,VOLD,VOLU,MNXT,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
