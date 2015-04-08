@@ -42,18 +42,18 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // Layer1:
         // left hand
-        FN23,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,FN23,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
                                  SPC, ENT, LALT,
         // right hand
              TRNS,TRNS,FN15,FN16,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  FN9, FN7, FN8, FN10,TRNS,NUHS,
+                  FN9, FN7, FN8, FN10,FN24,NUHS,
              TRNS,FN11,FN13,FN14,FN12,TRNS,TRNS,
                        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
@@ -297,7 +297,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),          // FN21
     ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ESC),          // FN22
 
-    ACTION_MODS_KEY(MOD_LCTL, KC_GRAVE),            // FN23 = Ctrl + §
+    ACTION_MODS_KEY(MOD_RALT, KC_EQUAL),            // FN23 = ~ (undead - Windows only)
+    ACTION_MODS_KEY(MOD_RALT, KC_SCOLON),           // FN24 = ^ (undead - Windows only)
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
