@@ -42,7 +42,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // Layer1:
         // left hand
-        TRNS,TRNS,TRNS,FN25,TRNS,TRNS,TRNS,
+        TRNS,TRNS,FN26,FN25,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -301,6 +301,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RALT, KC_SCOLON),           // FN24 = ^ (undead - Windows only)
 
     ACTION_MODS_KEY(MOD_RALT, KC_3),                // FN25  = #
+    ACTION_MODS_KEY(MOD_RALT, KC_2),                // FN26  = @
 
 };
 
