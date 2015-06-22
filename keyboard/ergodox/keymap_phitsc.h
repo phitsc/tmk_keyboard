@@ -28,33 +28,33 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LGUI, NUBS,EQL, RBRC,FN21,
                                       HOME,END,
                                            LCTL,
-                                 BSPC, DEL,FN4,
+                                 BSPC, DEL,LALT,
         // right hand
              FN3,  6,  7,  8,  9,  0,  MINS,
              FN2,  Y,   U,   I,   O,   P,   LBRC,
                    H,   J,   K,   L,   SCLN,QUOT,
-             FN1,  N,   M,   COMM,DOT, SLSH,RSFT,
-                       FN22, LEFT,DOWN,UP,  RIGHT,
+             FN1,  N,   M,   COMM,DOT, UP  ,SLSH,
+                       FN22, RALT,LEFT,DOWN,RIGHT,
         PGDN, PGUP,
         RCTL,
-        FN5,  ENT, SPC
+        RALT, ENT , SPC
     ),
 
     KEYMAP(  // Layer1:
         // left hand
-        TRNS,TRNS,FN26,FN25,TRNS,TRNS,TRNS,
+        FN23,TRNS,FN26,FN25,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,FN23,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
-                                 SPC, ENT, LALT,
+                                 SPC, ENT, TRNS,
         // right hand
              TRNS,TRNS,FN15,FN16,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                   FN9, FN7, FN8, FN10,FN24,NUHS,
-             TRNS,FN11,FN13,FN14,FN12,TRNS,TRNS,
+             TRNS,FN11,FN13,FN14,FN12,SLSH,TRNS,
                        TRNS,HOME,PGDN,PGUP,END,
         TRNS,TRNS,
         TRNS,
@@ -274,8 +274,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_LAYER_MOMENTARY(2),                      // FN2 - Layer 2
     ACTION_LAYER_MOMENTARY(3),                      // FN3 - Layer 3
 
-    ACTION_MODS_TAP_KEY(MOD_LALT, KC_ESC),          // FN4
-    ACTION_MODS_TAP_KEY(MOD_RALT, KC_ESC),          // FN5
+    ACTION_MODS_TAP_KEY(MOD_LALT, KC_ESC),          // FN4 - UNUSED
+    ACTION_MODS_TAP_KEY(MOD_RALT, KC_ESC),          // FN5 - UNUSED
     ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),         // FN6
 
     ACTION_MODS_KEY(MOD_LSFT, KC_8),                // FN7  = (
