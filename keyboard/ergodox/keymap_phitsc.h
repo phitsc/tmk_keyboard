@@ -25,7 +25,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB , Q,   W,   E,   R,   T,  FN2,
         FN1,  A,   S,   D,   F,   G,
         LSFT, Z,   X,   C,   V,   B,  FN1,
-        LGUI, NUBS,EQL, RBRC,FN21,
+        LGUI, NUBS,TRNS,LALT,FN21,
                                       HOME,END,
                                            LCTL,
                                  BSPC, DEL,LALT,
@@ -46,13 +46,13 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,FN23,TRNS,TRNS,
+        TRNS,TRNS,TRNS,FN4 ,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
                                  SPC, ENT, TRNS,
         // right hand
-             TRNS,TRNS,FN15,FN16,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,FN15,FN16,TRNS,TRNS,EQL,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,RBRC,
                   FN9, FN7, FN8, FN10,FN24,NUHS,
              TRNS,FN11,FN13,FN14,FN12,PGUP,TRNS,
                        TRNS,TRNS,HOME,PGDN,END,
@@ -274,7 +274,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_LAYER_MOMENTARY(2),                      // FN2 - Layer 2
     ACTION_LAYER_MOMENTARY(3),                      // FN3 - Layer 3
 
-    ACTION_MODS_TAP_KEY(MOD_LALT, KC_ESC),          // FN4 - UNUSED
+    ACTION_MODS_KEY(MOD_LSFT, KC_RBRACKET),         // FN4
     ACTION_MODS_TAP_KEY(MOD_RALT, KC_ESC),          // FN5 - UNUSED
     ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),         // FN6
 
