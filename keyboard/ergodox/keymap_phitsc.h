@@ -51,7 +51,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            TRNS,
                                  SPC, ENT, TRNS,
         // right hand
-             TRNS,TRNS,FN15,FN16,TRNS,FN4 ,EQL,
+             TRNS,TRNS,FN16,TRNS,TRNS,FN4 ,EQL,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,RBRC,
                   FN9, FN7, FN8, FN10,FN24,NUHS,
              TRNS,FN11,FN13,FN14,FN12,PGUP,TRNS,
@@ -286,7 +286,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RALT, KC_RBRACKET),         // FN12 = ]
     ACTION_KEY     (KC_NONUS_BSLASH),               // FN13 = <
     ACTION_MODS_KEY(MOD_LSFT, KC_NONUS_BSLASH),     // FN14 = >
-    ACTION_MODS_KEY(MOD_LSFT, KC_7),                // FN15  = /
+    ACTION_MODS_KEY(MOD_LSFT, KC_7),                // FN15  - UNUSED
     ACTION_MODS_KEY(MOD_RALT, KC_NONUS_BSLASH),     // FN16  = \
 
     ACTION_MODS_KEY(MOD_LSFT, KC_F5),               // FN17
