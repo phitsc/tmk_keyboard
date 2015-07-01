@@ -27,17 +27,17 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LSFT, Z,   X,   C,   V,   B,  FN1,
         LGUI, NUBS,TRNS,LALT,FN21,
                                       HOME,END,
-                                           LCTL,
-                                 BSPC, DEL,LALT,
+                                           LALT,
+                                 BSPC, DEL,LCTL,
         // right hand
              FN3,  6,  7,  8,  9,  0,  MINS,
              FN2,  Y,   U,   I,   O,   P,   LBRC,
                    H,   J,   K,   L,   SCLN,QUOT,
-             FN1,  N,   M,   COMM,DOT, UP  ,SLSH,
+             FN1,  N,   M,   COMM,DOT, UP  ,FN5 ,
                        FN22, RALT,LEFT,DOWN,RIGHT,
         PGDN, PGUP,
-        RCTL,
-        RALT, ENT , SPC
+        RALT,
+        RCTL, ENT ,SPC
     ),
 
     KEYMAP(  // Layer1:
@@ -275,8 +275,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_LAYER_MOMENTARY(3),                      // FN3 - Layer 3
 
     ACTION_MODS_KEY(MOD_LSFT, KC_RBRACKET),         // FN4
-    ACTION_MODS_TAP_KEY(MOD_RALT, KC_ESC),          // FN5 - UNUSED
-    ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),         // FN6
+    ACTION_MODS_TAP_KEY(MOD_RSFT, KC_SLSH),         // FN5
+    ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),         // FN6 - unused
 
     ACTION_MODS_KEY(MOD_LSFT, KC_8),                // FN7  = (
     ACTION_MODS_KEY(MOD_LSFT, KC_9),                // FN8  = )
