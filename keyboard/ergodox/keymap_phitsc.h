@@ -21,21 +21,21 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  
     KEYMAP(  // Layer0: default, leftled:none
         // left hand
-        GRV , 1,   2,   3,   4,   5,  FN3,
+        GRV , 1,   2,   3,   4,   5,  FN6,
         TAB , Q,   W,   E,   R,   T,  FN2,
         FN1,  A,   S,   D,   F,   G,
-        LSFT, Z,   X,   C,   V,   B,  FN1,
-        LGUI, NUBS,TRNS,LALT,FN21,
-                                      HOME,END,
+        LSFT, Z,   X,   C,   V,   B,  LGUI,
+        FN3 , NUBS,NO,  LALT,FN21,
+                                       NO, NO,
                                            LALT,
                                  BSPC, DEL,LCTL,
         // right hand
-             FN3,  6,  7,  8,  9,  0,  MINS,
-             FN2,  Y,   U,   I,   O,   P,   LBRC,
-                   H,   J,   K,   L,   SCLN,QUOT,
-             FN1,  N,   M,   COMM,DOT, UP  ,FN5 ,
+             FN6 ,  6,  7,  8,  9,  0,  MINS,
+             FN2 ,  Y,   U,   I,   O,   P,   LBRC,
+                    H,   J,   K,   L,   SCLN,QUOT,
+             RGUI,  N,   M,   COMM,DOT, UP  ,FN5 ,
                        FN22, RALT,LEFT,DOWN,RIGHT,
-        PGDN, PGUP,
+        NO, NO,
         RALT,
         RCTL, ENT ,SPC
     ),
@@ -53,8 +53,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              TRNS,TRNS,FN16,TRNS,TRNS,FN4 ,EQL,
              TRNS,TRNS,FN11,FN12,TRNS,TRNS,RBRC,
-                  TRNS,FN9 ,FN10,TRNS,FN24,NUHS,
-             TRNS,TRNS,FN13,FN14,TRNS,PGUP,TRNS,
+                  FN15,FN9 ,FN10,TRNS,FN24,NUHS,
+             TRNS,TRNS,FN13,FN14,TRNS,PGUP,SLSH,
                        TRNS,TRNS,HOME,PGDN,END,
         TRNS,TRNS,
         TRNS,
@@ -73,7 +73,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  TRNS,TRNS,TRNS,
         // right hand
              TRNS,F6,  F7,  F8,  F9,  F10, BRK,
-             TRNS,F11, F12, TRNS,TRNS,TRNS,PSCR,
+             TRNS,F11, F12, F13 ,F14 ,F15 ,PSCR,
                   TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                        TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -84,20 +84,20 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // Layer3:
         // left hand
-        FN0, TRNS,TRNS,TRNS,TRNS,MUTE,TRNS,
+        FN0, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      MPLY,MSTP,
+                                      TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
         // right hand
-             TRNS,MUTE,TRNS,TRNS,TRNS,TRNS,PWR,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PWR,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                   TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,VOLU,TRNS,
-                       TRNS,TRNS,MPRV,VOLD,MNXT,
+                       MUTE,MPLY,MPRV,VOLD,MNXT,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
@@ -276,7 +276,7 @@ static const uint16_t PROGMEM fn_actions[] = {
 
     ACTION_MODS_KEY(MOD_LSFT, KC_RBRACKET),         // FN4
     ACTION_MODS_TAP_KEY(MOD_RSFT, KC_SLSH),         // FN5
-    ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),         // FN6 - unused
+    ACTION_LAYER_TOGGLE(2),                         // FN6 - Layer 2
 
     ACTION_MODS_KEY(MOD_LSFT, KC_8),                // FN7  = (
     ACTION_MODS_KEY(MOD_LSFT, KC_9),                // FN8  = )
@@ -286,8 +286,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RALT, KC_RBRACKET),         // FN12 = ]
     ACTION_KEY     (KC_NONUS_BSLASH),               // FN13 = <
     ACTION_MODS_KEY(MOD_LSFT, KC_NONUS_BSLASH),     // FN14 = >
-    ACTION_MODS_KEY(MOD_LSFT, KC_7),                // FN15  - UNUSED
-    ACTION_MODS_KEY(MOD_RALT, KC_NONUS_BSLASH),     // FN16  = \
+    ACTION_MODS_KEY(MOD_RALT, KC_7),                // FN15 - |
+    ACTION_MODS_KEY(MOD_RALT, KC_NONUS_BSLASH),     // FN16 = \
 
     ACTION_MODS_KEY(MOD_LSFT, KC_F5),               // FN17
     ACTION_MODS_KEY(MOD_LSFT, KC_F9),               // FN18
