@@ -24,18 +24,18 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         GRV , 1,   2,   3,   4,   5,  FN6,
         TAB , Q,   W,   E,   R,   T,  FN2,
         FN1,  A,   S,   D,   F,   G,
-        LSFT, Z,   X,   C,   V,   B,  LGUI,
+        LSFT, Z,   X,   C,   V,   B,  NO,
         FN3 , NUBS,NO,  LALT,FN21,
-                                       NO, NO,
+                                       LGUI, NO,
                                            LALT,
                                  BSPC, DEL,LCTL,
         // right hand
              FN6 ,  6,  7,  8,  9,  0,  MINS,
              FN2 ,  Y,   U,   I,   O,   P,   LBRC,
                     H,   J,   K,   L,   SCLN,QUOT,
-             RGUI,  N,   M,   COMM,DOT, UP  ,FN5 ,
+             NO  ,  N,   M,   COMM,DOT, UP  ,SLSH,
                        FN22, RALT,LEFT,DOWN,RIGHT,
-        NO, NO,
+        NO  , RGUI,
         RALT,
         RCTL, ENT ,SPC
     ),
@@ -88,7 +88,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,FN28,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
@@ -100,7 +100,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                        MUTE,MPLY,MPRV,VOLD,MNXT,
         TRNS,TRNS,
         TRNS,
-        TRNS,TRNS,TRNS
+        TRNS,TRNS,FN27
     ),
 
     KEYMAP(  // Layer4:
@@ -287,7 +287,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_KEY     (KC_NONUS_BSLASH),               // FN13 = <
     ACTION_MODS_KEY(MOD_LSFT, KC_NONUS_BSLASH),     // FN14 = >
     ACTION_MODS_KEY(MOD_RALT, KC_7),                // FN15 - |
-    ACTION_MODS_KEY(MOD_RALT, KC_NONUS_BSLASH),     // FN16 = \
+    ACTION_MODS_KEY(MOD_RALT, KC_NONUS_BSLASH),     // FN16 = backslash
 
     ACTION_MODS_KEY(MOD_LSFT, KC_F5),               // FN17
     ACTION_MODS_KEY(MOD_LSFT, KC_F9),               // FN18
@@ -300,9 +300,11 @@ static const uint16_t PROGMEM fn_actions[] = {
     ACTION_MODS_KEY(MOD_RALT, KC_EQUAL),            // FN23 = ~ (undead - Windows only)
     ACTION_MODS_KEY(MOD_RALT, KC_SCOLON),           // FN24 = ^ (undead - Windows only)
 
-    ACTION_MODS_KEY(MOD_RALT, KC_3),                // FN25  = #
-    ACTION_MODS_KEY(MOD_RALT, KC_2),                // FN26  = @
+    ACTION_MODS_KEY(MOD_RALT, KC_3),                // FN25 = #
+    ACTION_MODS_KEY(MOD_RALT, KC_2),                // FN26 = @
 
+    ACTION_MODS_KEY(MOD_LCTL|MOD_LALT, KC_SPC),     // FN27 = Ctrl + Alt + Space
+    ACTION_MODS_KEY(MOD_LCTL, KC_RBRC)              // FN28 = Cltr + diacr. 
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
